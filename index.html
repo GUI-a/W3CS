@@ -19,6 +19,22 @@
 
   gtag('config', 'G-WDEQPM6PJC');
 </script>
+  <!-- Event snippet for 获取技术建议 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17197983893/nWeYCPPh--AaEJXR0YhA',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 </head>
 <body>
     <!-- 导航栏 -->
