@@ -387,6 +387,7 @@
 /* 滚动区域 */
 .network-slider {
   width: 100%;
+  margin: 30px 0;
   overflow: hidden;
   position: relative;
 }
@@ -395,7 +396,7 @@
 .logo-track {
   display: flex;
   width: max-content;
-  animation: scrollLogos 30s linear infinite;
+  animation: scrollLogos 40s linear infinite;
   animation-play-state: running;
 }
 
@@ -406,9 +407,9 @@
 
 /* logo 样式 */
 .logo-track img {
-  width: 120px;
-  height: auto;
-  margin: 0 40px;
+  /* width: 120px; */
+  /* height: auto; */
+  margin: 0 30px;
   opacity: 0.8;
   transition: opacity 0.3s;
   filter: grayscale(1);
@@ -432,15 +433,18 @@
 /* 移动端响应式 */
 @media (max-width: 768px) {
   .logo-track img {
-    width: 100px;
-    margin: 0 10px;
+    height: 30%;
+    margin: 0 15px;
+  }
+  .network-slider {
+    margin: 0;
   }
 }
 
 /* 热门项目 */
 .partner-scroll-section {
   background-color: #fafafa;
-  padding: 30px 20px;
+  padding: 30px 60px 10px 60px;
   overflow: hidden;
 }
 
@@ -453,8 +457,15 @@
 
 .scroll-track {
   display: flex;
-  gap: 40px;
+  gap: 120px;
   animation: scrollLeft 40s linear infinite;
+}
+
+.scroll-track img {
+    flex: 1;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .scroll-row.row-right .scroll-track {
@@ -467,22 +478,45 @@
 
 .scroll-track img {
   height: 50px;
-  opacity: 0.7;
+  opacity: 1;
   transition: opacity 0.3s;
 }
 
 .scroll-track img:hover {
-  opacity: 1;
+  opacity: 0.5;
 }
 
-/* 响应式 */
 @media (max-width: 768px) {
+    .partner-scroll-section {
+        padding: 20px 20px 5px 20px;
+    }
+  .scroll-track {
+    animation: none !important;   /* 关闭滚动动画 */
+    flex-wrap: wrap;              /* 开启换行 */
+    justify-content: flex-start;      /* 可选：居中对齐 */
+    column-gap: 65px;
+    row-gap: 20px;
+  }
+
   .scroll-track img {
     height: 36px;
-    gap: 20px;
+    flex: 0 0 auto;               /* 不伸缩 */
+    max-width: 40%;               /* 限制宽度 */
+  }
+
+  .scroll-row {
+    overflow: visible;            /* 允许正常显示换行内容 */
   }
 }
 
+.tips {
+    display: flex;
+    
+}
+.tips p {
+    color: #ddd;
+    font-size: 12px;
+}
 /* 第五屏 */
 .about {
     margin-top: 60px;
