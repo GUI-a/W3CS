@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    .tittle h2 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .tittle img {
+        width: 60px;
+    }
+}
